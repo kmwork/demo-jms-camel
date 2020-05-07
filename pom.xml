@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <properties>
+        <java.version>13</java.version>
+        <camel-version>3.2.0</camel-version>
+        <spring-boot-version>2.2.6.RELEASE</spring-boot-version>
+<!--        <camel-starter-version>2.25.1</camel-starter-version>-->
+    </properties>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.2.6.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <artifactId>kostya-k12-camel</artifactId>
+    <packaging>jar</packaging>
+    <name>kostya-k12-camel</name>
+    <description>Kostya Camel with JMS</description>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+            <version>${spring-boot-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-activemq</artifactId>
+            <version>${camel-version}</version>
+<!--            &lt;!&ndash;START OF GENERATED CODE&ndash;&gt;-->
+<!--            <exclusions>-->
+<!--                <exclusion>-->
+<!--                    <groupId>commons-logging</groupId>-->
+<!--                    <artifactId>commons-logging</artifactId>-->
+<!--                </exclusion>-->
+<!--            </exclusions>-->
+<!--            &lt;!&ndash;END OF GENERATED CODE&ndash;&gt;-->
+        </dependency>
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-jms</artifactId>
+            <version>${camel-version}</version>
+        </dependency>
+    </dependencies>
+</project>
