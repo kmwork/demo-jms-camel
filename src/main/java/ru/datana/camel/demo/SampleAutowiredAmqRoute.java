@@ -27,12 +27,12 @@ public class SampleAutowiredAmqRoute extends RouteBuilder {
         from("activemq:foo")
             .to("log:sample");
 
-        from("timer://bar?fixedRate=true&delay=0&period=3s")
+        from("timer://bar?fixedRate=true&delay=0&period=300")
         /*from("timer:bar")*/
             .setBody(constant("Hello from Camel"))
             .to("activemq:foo");
 
-        from("timer:kostya?period=5s").to("log:kostya");
+        from("timer:kostya?period=500").to("log:kostya");
     }
 
 }
