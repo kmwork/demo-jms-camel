@@ -14,9 +14,9 @@ public class S7Api {
         S7Connector connector =
                 S7ConnectorFactory
                         .buildTCPConnector()
-                        .withHost("10.0.0.220")
+                        .withHost("172.30.143.30")
                         .withRack(0) //optional
-                        .withSlot(2) //optional
+                        .withSlot(0) //optional
                         .build();
 
         byte[] bs = connector.read(DaveArea.DB, 3, 2, 0);
