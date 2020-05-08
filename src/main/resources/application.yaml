@@ -1,0 +1,6 @@
+camel:
+  component:
+    activemq:
+      broker-url: tcp://localhost:61616
+  springboot:
+    main-run-controller: true
