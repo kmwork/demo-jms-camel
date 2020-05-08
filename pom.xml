@@ -4,10 +4,9 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>ru.datana.demo</groupId>
     <artifactId>kostya-k12-camel</artifactId>
-<!--    <version>1-alfa</version>-->
     <packaging>jar</packaging>
     <name>kostya-k12-camel</name>
-    <description>Kostya Camel with JMS</description>
+    <description>Kostya Camel with Kafka</description>
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -69,19 +68,17 @@
             <version>${camel-version}</version>
         </dependency>
 
-<!--        <dependency>-->
-<!--            <groupId>org.apache.camel</groupId>-->
-<!--            <artifactId>camel-netty</artifactId>-->
-<!--            <version>${camel-version}</version>-->
-<!--        </dependency>-->
-
         <dependency>
             <groupId>org.apache.camel.springboot</groupId>
             <artifactId>camel-bean-starter</artifactId>
             <version>${camel-for-spring-version}</version>
-            <!-- use the same version as your Camel core version -->
         </dependency>
 
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-kafka</artifactId>
+            <version>${camel-for-spring-version}</version>
+        </dependency>
 
         <dependency>
             <groupId>com.github.s7connector</groupId>

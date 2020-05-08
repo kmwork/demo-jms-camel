@@ -1,1 +1,1 @@
-# версия 1 для S7 контроллеров - с либой S7Controller от https://github.com/s7connector/s7connector
+# Демо Apache Kafka + Apache Camel
