@@ -1,7 +1,5 @@
 package ru.datana.camel.demo;
 
-import org.apache.camel.Exchange;
-import org.apache.camel.Processor;
 import org.apache.camel.builder.RouteBuilder;
 import org.springframework.stereotype.Component;
 
@@ -12,8 +10,8 @@ public class S7SocketForCamelRoute extends RouteBuilder {
     public void configure() throws Exception {
 
         from("timer:kostya?period=5000")
-        /*from("timer:bar")*/
-            .bean(S7Bean.class);
+                /*from("timer:bar")*/
+                .bean(S7Bean.class);
 
         from("direct:start").to("bean:s7Bean").to("log:sample");
     }
