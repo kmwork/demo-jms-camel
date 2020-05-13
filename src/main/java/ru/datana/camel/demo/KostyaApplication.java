@@ -4,11 +4,13 @@ import org.apache.camel.CamelContext;
 import org.apache.camel.Exchange;
 import org.apache.camel.ProducerTemplate;
 import org.apache.camel.builder.RouteBuilder;
+import org.apache.camel.component.activemq.springboot.ActiveMQComponentAutoConfiguration;
 import org.apache.camel.impl.DefaultCamelContext;
 import org.apache.commons.io.FileUtils;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 
 import java.io.File;
 import java.io.IOException;
@@ -17,7 +19,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @SpringBootApplication
-@Configuration
+@Import(ActiveMQComponentAutoConfiguration.class)
 public class KostyaApplication {
 
     public static void main(String[] args)  throws Exception {
