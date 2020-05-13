@@ -25,11 +25,10 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.jms.annotation.EnableJms;
-import ru.datana.camel.demo.config.DatanaActiveMqSpringConfig;
 
 @EnableJms
 @SpringBootApplication
-@Import(DatanaActiveMqSpringConfig.class)
+//@Import(DatanaActiveMqSpringConfig.class)
 
 public class SampleAmqApplication {
 
