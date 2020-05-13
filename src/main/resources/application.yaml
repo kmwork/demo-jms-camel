@@ -19,11 +19,7 @@ logging:
           transaction: DEBUG
         SQL: DEBUG
       springframework: DEBUG
-    ru:
-      sbrf:
-        ais:
-          microservices:
-            safe: DEBUG
+    ru: DEBUG
     sql: debug
   pattern:
     console: '%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n'
