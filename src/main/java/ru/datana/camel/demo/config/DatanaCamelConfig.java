@@ -29,6 +29,7 @@ public class DatanaCamelConfig {
         return result;
     }
 
+    @Bean
     private JmsConfiguration camelActiveMQConfig() {
         JmsConfiguration configuration = new JmsConfiguration();
         configuration.setConnectionFactory(pooledConnectionFactory());
@@ -40,6 +41,7 @@ public class DatanaCamelConfig {
         return configuration;
     }
 
+    @Bean
     private PooledConnectionFactory pooledConnectionFactory() {
         PooledConnectionFactory factory = new PooledConnectionFactory();
         factory.setMaxConnections(10);
@@ -48,6 +50,7 @@ public class DatanaCamelConfig {
         return factory;
     }
 
+    @Bean
     private ActiveMQConnectionFactory singleFactory() {
 
         log.debug("[JMS] connect to url = " + brokerUrl);
