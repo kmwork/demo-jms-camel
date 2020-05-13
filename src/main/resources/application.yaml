@@ -5,6 +5,10 @@ camel:
   springboot:
     main-run-controller: true
     jmx-enabled: false
+  component:
+    activemq:
+      brokerURL: tcp://172.29.40.42:61616
+      auto-startup: true
 spring:
   main:
     allow-bean-definition-overriding: true
@@ -24,12 +28,6 @@ logging:
   pattern:
     console: '%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n'
 
-#camel:
-#  component:
-#    activemq:
-#      brokerURL: tcp://172.29.40.42:61616
-#      auto-startup: true
-#  springboot:
-#    main-run-controller: true
-#
+
+
 

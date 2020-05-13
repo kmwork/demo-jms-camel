@@ -12,7 +12,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Import;
-import ru.datana.camel.demo.config.DatanaCamelConfig;
+//import ru.datana.camel.demo.config.DatanaCamelConfig;
 
 import java.io.File;
 import java.io.IOException;
@@ -21,7 +21,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 @SpringBootApplication
-@Import(DatanaCamelConfig.class)
 public class KostyaApplication implements CommandLineRunner {
 
     @Autowired
