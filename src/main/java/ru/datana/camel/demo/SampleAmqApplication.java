@@ -16,18 +16,25 @@
  */
 package ru.datana.camel.demo;
 
-import org.apache.camel.CamelContext;
-import org.apache.camel.impl.DefaultCamelContext;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jms.activemq.ActiveMQAutoConfiguration;
+import org.springframework.boot.autoconfigure.jms.activemq.ActiveMQProperties;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Import;
+import org.springframework.context.annotation.ImportResource;
+import org.springframework.jms.annotation.EnableJms;
 
-//@SpringBootApplication
+@EnableJms
+@SpringBootApplication
+@Import(ActiveMQAutoConfiguration.class)
+
 public class SampleAmqApplication {
 
-    public static void main(String[] args) throws Exception {
-        //SpringApplication.run(SampleAmqApplication.class, args);
-        CamelContext camelContext = new DefaultCamelContext();
-        camelContext.start();
-        camelContext.addRoutes(new SampleAutowiredAmqRoute());
-
-        Thread.sleep(60*1000);
+    // must have a main method spring-boot can run
+    public static void main(String[] args) {
+        SpringApplication.run(SampleAmqApplication.class, args);
     }
+
 }
+

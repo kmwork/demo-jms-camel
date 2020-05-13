@@ -1,0 +1,51 @@
+spring:
+  main:
+    allow-bean-definition-overriding: true
+    banner-mode: 'off'
+
+  activemq:
+    broker-url: tcp://172.29.40.42:61616
+    close-timeout: 15000
+    in-memory: true
+    non-blocking-redelivery: false
+    packages:
+      trust-all: false
+    password: admin
+    pool:
+      block-if-full: true
+      block-if-full-timeout: -1
+      enabled: false
+      idle-timeout: 30000
+      max-connections: 1
+      time-between-expiration-check: -1
+      use-anonymous-producers: true
+    send-timeout: 0
+    user: admin
+
+debug: true
+logging:
+  level:
+    org:
+      hibernate:
+        engine:
+          transaction: DEBUG
+        SQL: DEBUG
+      springframework: DEBUG
+    ru:
+      sbrf:
+        ais:
+          microservices:
+            safe: DEBUG
+    sql: debug
+  pattern:
+    console: '%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n'
+
+#camel:
+#  component:
+#    activemq:
+#      brokerURL: tcp://172.29.40.42:61616
+#      auto-startup: true
+#  springboot:
+#    main-run-controller: true
+#
+
