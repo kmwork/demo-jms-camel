@@ -1,8 +1,7 @@
+datana:
+  jms:
+    brokerUrl: tcp://172.29.40.42:61616
 camel:
-  component:
-    activemq:
-      brokerURL: tcp://172.29.40.42:61616
-      auto-startup: true
   springboot:
     main-run-controller: true
     jmx-enabled: false

@@ -1,15 +1,29 @@
 package ru.datana.camel.demo.config;
 
-import org.apache.activemq.pool.PooledConnectionFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.activemq.ActiveMQConnectionFactory;
+import org.apache.activemq.pool.PooledConnectionFactory;
 import org.apache.camel.component.activemq.ActiveMQComponent;
 import org.apache.camel.component.jms.JmsConfiguration;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 
+import javax.annotation.PostConstruct;
+
+@Slf4j
 public class DatanaCamelConfig {
+
+    @Value("${datana.jms.brokerUrl}")
+    private String brokerUrl;
+
+    @PostConstruct
+    protected void init() {
+        log.debug("[JMS] init");
+    }
 
     @Bean
     protected ActiveMQComponent datanaJms() {
+        log.debug("[JMS] create datanaJms");
         ActiveMQComponent result = new ActiveMQComponent();
         result.setConfiguration(camelActiveMQConfig());
         return result;
@@ -35,8 +49,10 @@ public class DatanaCamelConfig {
     }
 
     private ActiveMQConnectionFactory singleFactory() {
+
+        log.debug("[JMS] connect to url = " + brokerUrl);
         ActiveMQConnectionFactory f = new ActiveMQConnectionFactory();
-        f.setBrokerURL("tcp://172.29.40.42:61616");
+        f.setBrokerURL(brokerUrl);
         return f;
     }
 }
