@@ -11,6 +11,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
+import org.springframework.context.annotation.ImportResource;
 
 import java.io.File;
 import java.io.IOException;
@@ -19,7 +20,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @SpringBootApplication
-@Import(ActiveMQComponentAutoConfiguration.class)
+//@ImportResource({"classpath:/camel-context.xml"})
 public class KostyaApplication {
 
     public static void main(String[] args)  throws Exception {
@@ -40,7 +41,7 @@ public class KostyaApplication {
             public void configure() throws Exception {
                 from("timer://bar?fixedRate=true&delay=0&period=10000")
                         .setBody(constant(responseBodyJsonFromRest))
-                        .to("activemq:dima");
+                        .to("datanaJms:dima");
 //                jms:queue:HELLO.WORLD :broker-u-r-l=tcp://172.29.40.42:61616 activemq:[queue:|topic:]destinationName[?options]
             }
 
