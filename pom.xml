@@ -17,7 +17,6 @@
     <properties>
         <java.version>13</java.version>
         <camel-version>3.2.0</camel-version>
-        <!--        <activemq-broker-version>5.15.9</activemq-broker-version>-->
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -60,12 +59,10 @@
         <dependency>
             <groupId>org.apache.camel.springboot</groupId>
             <artifactId>camel-spring-boot-starter</artifactId>
-            <version>3.1.0</version>
         </dependency>
         <dependency>
             <groupId>org.apache.camel.springboot</groupId>
             <artifactId>camel-http-starter</artifactId>
-            <version>3.1.0</version>
         </dependency>
 
         <dependency>
@@ -83,14 +80,8 @@
             <version>2.0.1</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.activemq</groupId>
-            <artifactId>activemq-camel</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.apache.activemq</groupId>
-                    <artifactId>activemq-broker</artifactId>
-                </exclusion>
-            </exclusions>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-activemq</artifactId>
         </dependency>
 
         <dependency>
