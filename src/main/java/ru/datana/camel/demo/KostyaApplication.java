@@ -55,8 +55,9 @@ public class KostyaApplication implements CommandLineRunner {
 
         camelContext.addRoutes(new RouteBuilder() {
             public void configure() throws Exception {
-                from("timer://bar?fixedRate=true&delay=0&period=10000")
+                from("timer://bar?fixedRate=true&delay=0&period=1000")
                         .setBody(constant(responseBodyJsonFromRest))
+                        .log("[SEND] dima")
                         .to("activemq:dima");
 //                jms:queue:HELLO.WORLD :broker-u-r-l=tcp://172.29.40.42:61616 activemq:[queue:|topic:]destinationName[?options]
             }
