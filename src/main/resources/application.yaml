@@ -1,3 +1,7 @@
+datana:
+  activemq:
+    brokerUrl: tcp://172.29.40.42:61616
+
 spring:
   main:
     allow-bean-definition-overriding: true
