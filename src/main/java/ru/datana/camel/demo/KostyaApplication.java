@@ -8,6 +8,8 @@ import org.apache.camel.impl.DefaultCamelContext;
 import org.apache.commons.io.FileUtils;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Import;
+import ru.datana.camel.demo.config.DatanaCamelConfig;
 
 import java.io.File;
 import java.io.IOException;
@@ -16,6 +18,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @SpringBootApplication
+@Import(DatanaCamelConfig.class)
 public class KostyaApplication {
 
     public static void main(String[] args)  throws Exception {
