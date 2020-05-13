@@ -17,6 +17,7 @@
     <properties>
         <java.version>13</java.version>
         <camel-version>3.2.0</camel-version>
+        <activemq-broker-version>5.15.9</activemq-broker-version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -71,18 +72,29 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-jms</artifactId>
         </dependency>
-
+        <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>activemq-broker</artifactId>
+            <version>${activemq-broker-version}</version>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <artifactId>geronimo-jms_1.1_spec</artifactId>
+                    <groupId>org.apache.geronimo.specs</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
         <dependency>
             <groupId>javax.jms</groupId>
             <artifactId>javax.jms-api</artifactId>
             <version>2.0.1</version>
         </dependency>
-
-        <dependency>
-            <groupId>org.apache.camel</groupId>
-            <artifactId>camel-activemq</artifactId>
-            <version>${camel-version}</version>
-        </dependency>
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<!--        <dependency>-->
+<!--            <groupId>org.apache.camel</groupId>-->
+<!--            <artifactId>camel-activemq</artifactId>-->
+<!--            <version>${camel-version}</version>-->
+<!--        </dependency>-->
 
         <dependency>
             <groupId>org.apache.camel</groupId>

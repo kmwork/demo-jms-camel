@@ -17,6 +17,7 @@
 package ru.datana.camel.demo;
 
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jms.activemq.ActiveMQAutoConfiguration;
 import org.springframework.boot.autoconfigure.jms.activemq.ActiveMQProperties;
@@ -27,7 +28,7 @@ import org.springframework.jms.annotation.EnableJms;
 
 @EnableJms
 @SpringBootApplication
-@Import(ActiveMQAutoConfiguration.class)
+///@Import(ActiveMQAutoConfiguration.class)
 
 public class SampleAmqApplication {
 
