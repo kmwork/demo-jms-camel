@@ -29,9 +29,6 @@ public class KostyaApplication implements CommandLineRunner {
 
     public static void main(String[] args)  throws Exception {
         SpringApplication.run(KostyaApplication.class, args);
-
-
-
     }
 
     public static String readFile() throws IOException {
