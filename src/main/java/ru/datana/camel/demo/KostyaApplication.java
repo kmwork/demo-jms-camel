@@ -57,9 +57,8 @@ public class KostyaApplication implements CommandLineRunner {
             public void configure() throws Exception {
                 from("timer://bar?fixedRate=true&delay=0&period=1000")
                         .setBody(constant(responseBodyJsonFromRest))
-                        .log("[SEND] dima")
-                        .to("activemq:dima");
-//                jms:queue:HELLO.WORLD :broker-u-r-l=tcp://172.29.40.42:61616 activemq:[queue:|topic:]destinationName[?options]
+                        .log("[SEND] dimaBBBB")
+                        .to("activemq:dimaBBB");
             }
 
         });
